@@ -1,25 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import GptInfo from './components/GptInfo/GptInfo';
+import QanItem from './components/QnaItem/QnaItem';
+import Question from './components/Question/Question';
+import useMiddleware from './hooks/useMiddleware';
+import { MainContainer } from './styles/GlobalStyle';
+import { TQna } from './types/qna.type';
 
 function App() {
+  const { inputRef, qnaArr, isScrollTop, isLoading, sendClick } =
+    useMiddleware();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MainContainer>
+      <Question
+        inputRef={inputRef}
+        isScrollTop={isScrollTop}
+        isLoading={isLoading}
+        sendClick={sendClick}
+      />
+      {qnaArr.length === 0 ? (
+        <GptInfo />
+      ) : (
+        qnaArr.map((qna: TQna, i: number) => {
+          return (
+            <QanItem key={i} qnaArr={qna} isLoading={i === 0 && isLoading} />
+          );
+        })
+      )}
+    </MainContainer>
   );
 }
 
