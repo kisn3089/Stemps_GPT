@@ -52,7 +52,7 @@ export const Question = styled.div`
     font-size: 16px;
     letter-spacing: 1px;
     line-height: 1.4;
-    padding: 1rem;
+    padding: 0.5rem;
   }
 `;
 
