@@ -14,7 +14,6 @@ const useMiddleware = () => {
     if (inputRef.current) {
       inputRef.current.value = '';
     }
-    console.log(process.env.REACT_APP_API_KEY);
     const requestOption = {
       method: 'POST',
       headers: {
