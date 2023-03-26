@@ -14,6 +14,7 @@ const useMiddleware = () => {
     if (inputRef.current) {
       inputRef.current.value = '';
     }
+    console.log(process.env.REACT_APP_API_KEY);
     const requestOption = {
       method: 'POST',
       headers: {
@@ -36,6 +37,8 @@ const useMiddleware = () => {
     )
       .then((res) => res.json())
       .then((res) => {
+        console.log(res);
+
         const answer = res.choices[0].text;
 
         if (answer) {
