@@ -12,6 +12,7 @@ interface IInput extends React.HTMLAttributes<HTMLInputElement> {
   placeholder?: string;
   customStyle?: CSSProperties;
   ref: React.RefObject<HTMLInputElement>;
+  onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
 }
 
 const Input = React.forwardRef<HTMLInputElement, IInput>(
@@ -26,6 +27,7 @@ const Input = React.forwardRef<HTMLInputElement, IInput>(
       backgroundColor,
       customStyle,
       placeholder,
+      onKeyDown,
     }: IInput,
     ref
   ) => {
@@ -46,6 +48,7 @@ const Input = React.forwardRef<HTMLInputElement, IInput>(
         type={type}
         placeholder={placeholder}
         style={style}
+        onKeyDown={onKeyDown}
       />
     );
   }

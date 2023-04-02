@@ -75,7 +75,19 @@ const useMiddleware = () => {
     }
   }, [qnaArr]);
 
-  return { qnaArr, inputRef, isScrollTop, isLoading, sendClick };
+  const questionEnter = useCallback(
+    (e: React.KeyboardEvent<HTMLInputElement>) => {
+      if (
+        e.key === 'Enter' &&
+        inputRef.current &&
+        inputRef.current?.value.trim() !== ''
+      )
+        generateResponse(inputRef.current?.value);
+    },
+    [qnaArr]
+  );
+
+  return { qnaArr, inputRef, isScrollTop, isLoading, sendClick, questionEnter };
 };
 
 export default useMiddleware;

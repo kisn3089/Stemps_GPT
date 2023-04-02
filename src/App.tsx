@@ -6,7 +6,7 @@ import { MainContainer } from './styles/GlobalStyle';
 import { TQna } from './types/qna.type';
 
 function App() {
-  const { inputRef, qnaArr, isScrollTop, isLoading, sendClick } =
+  const { inputRef, qnaArr, isScrollTop, isLoading, sendClick, questionEnter } =
     useMiddleware();
 
   return (
@@ -16,6 +16,7 @@ function App() {
         isScrollTop={isScrollTop}
         isLoading={isLoading}
         sendClick={sendClick}
+        questionEnter={questionEnter}
       />
       {qnaArr.length === 0 ? (
         <GptInfo />

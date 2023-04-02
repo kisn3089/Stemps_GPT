@@ -8,6 +8,7 @@ interface IQuestion {
   isScrollTop: boolean;
   isLoading: boolean;
   sendClick: (e: React.MouseEvent<HTMLDivElement>) => void;
+  questionEnter: (e: React.KeyboardEvent<HTMLInputElement>) => void;
 }
 
 const Question = ({
@@ -15,6 +16,7 @@ const Question = ({
   isScrollTop,
   isLoading,
   sendClick,
+  questionEnter,
 }: IQuestion) => {
   const topHanlder = () => {
     window.scrollTo({
@@ -23,10 +25,23 @@ const Question = ({
     });
   };
 
+  // const temp = (e: React.KeyboardEvent<HTMLInputElement>) => {
+  //   console.log('111111');
+
+  //   if (e.key === 'Enter') {
+  //     console.log('Enter');
+  //   }
+  // };
+
   return (
     <>
       <QuestioContainer id="quest">
-        <Input ref={inputRef} type="text" width="100%" />
+        <Input
+          ref={inputRef}
+          type="text"
+          width="100%"
+          onKeyDown={questionEnter}
+        />
         {isLoading ? (
           <Svg.Spinner style={{ width: '35px', cursor: 'not-allowed' }} />
         ) : (

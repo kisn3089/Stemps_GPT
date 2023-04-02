@@ -9,8 +9,6 @@ interface IQnaItem {
 }
 
 const QanItem = ({ qnaArr, isLoading }: IQnaItem) => {
-  console.log(qnaArr);
-
   return (
     <Container>
       <QuestionBox>
