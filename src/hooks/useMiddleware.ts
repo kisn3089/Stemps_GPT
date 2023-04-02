@@ -37,7 +37,6 @@ const useMiddleware = () => {
       .then((res) => res.json())
       .then((res) => {
         const answer = res.choices[0].text;
-
         if (answer) {
           setQnaArr([
             {
