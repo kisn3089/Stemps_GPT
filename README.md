@@ -32,7 +32,6 @@ $ npm i && npm start
 - API
   - fetch
 
-### 구현
 
 #### 반응형
 
