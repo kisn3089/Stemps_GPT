@@ -19,8 +19,16 @@
 
 ### 실행 방법
 
+- Client
+
 ```
-$ npm i && npm start
+$ cd client && npm i && npm start
+```
+
+- Server
+
+```
+$ cd server && npm i && npm start
 ```
 
 ### Technology
@@ -31,7 +39,6 @@ $ npm i && npm start
   - StyledComponents
 - API
   - fetch
-
 
 #### 반응형
 
