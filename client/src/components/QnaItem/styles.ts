@@ -1,4 +1,4 @@
-import styled, { css, keyframes } from 'styled-components';
+import styled, { css, keyframes } from "styled-components";
 
 const loadingAnimation = keyframes`
   0% {
@@ -66,13 +66,14 @@ export const AnswerBox = styled.div<{ isLoading: boolean }>`
   svg {
     width: 30px;
     height: 30px;
+    margin: 0 10px;
     fill: #fff;
     animation: ${(props) =>
       props.isLoading
         ? css`
             ${loadingAnimation} 0.8s ease-in-out infinite alternate
           `
-        : ''};
+        : ""};
   }
   @media screen and (max-width: 800px) {
     padding: 0 10px;

@@ -1,7 +1,7 @@
-import React from 'react';
-import { TQna } from '../../types/qna.type';
-import * as Svg from '../../components/atoms/icon/icon';
-import { Answer, AnswerBox, Container, Question, QuestionBox } from './styles';
+import React from "react";
+import { TQna } from "../../types/qna.type";
+import * as Svg from "../../components/atoms/icon/icon";
+import { Answer, AnswerBox, Container, Question, QuestionBox } from "./styles";
 
 interface IQnaItem {
   qnaArr: TQna;
