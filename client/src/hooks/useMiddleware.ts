@@ -21,7 +21,7 @@ const useMiddleware = () => {
       },
       body: JSON.stringify({ newQuestion }),
     };
-    await fetch("http://localhost:8080/", requestOption)
+    await fetch("http://giwftzormv.us18.qoddiapp.com/", requestOption)
       .then((res) => res.json())
       .then((data) => {
         const { message } = data;
